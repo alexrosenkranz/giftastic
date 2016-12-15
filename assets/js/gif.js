@@ -5,8 +5,8 @@ $(document).ready(function() {
     // URL for API call
     // Variable for clicked button's value to be passed through the API
 
-  var buttons = ['Gob Bluth','Ron Swanson','Community','Aqua Teen Hunger Force'];
-  var url = 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=10&q=';
+  var buttons = ['Gob Bluth','Ron Swanson','Community','Archer', 'WWE'];
+  var url = 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=20&q=';
   var queryValue;
 
   // Create buttons from array
@@ -22,11 +22,11 @@ $(document).ready(function() {
       // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
       var a = $("<button>");
       // Adds a class of movie to our button
-      a.addClass("gifButton btn btn-lg btn-default");
+      a.addClass("gifButton btn btn-lg btn-default btn-block");
       // Added a data-attribute
       a.attr("data-name", buttons[i]);
       // Provided the initial button text
-      a.text(buttons[i]);
+      a.append(buttons[i]);
       // Added the button to the buttons-view div
       $(".buttonArea").append(a);
     }
@@ -49,37 +49,28 @@ $(document).ready(function() {
     }).done(function(response) {
       console.log(response);
       var gif = response.data;
-      for (var i = 0; i < 10; i++) {
+      for (var i = 0; i < 20; i++) {
         
         // Creates a div to hold the gif
         var gifDiv = $('<div>');
-        gifDiv.addClass('gif col-md-6 col-xs-12 col-sm-6');
-        // Retrieves the Rating Data
-        // Creates an element to have the rating displayed
-        gifDiv.append('<h4>Rated: '+gif[i].rating + '</h4>');
+        gifDiv.addClass('gif col-md-4 col-xs-12 col-sm-4');
 
-        // Displays the rating
-        // Retrieves the release year
-        // Creates an element to hold the release year
-        gifDiv.append('<img class="gifImg" src='+gif[i].images.original_still.url + ' data-still=' + gif[i].images.original_still.url + ' data-animate=' + gif[i].images.original.url + ' data-state="still"/>');
-        // Displays the release year
-        // Retrieves the plot
-        // Creates an element to hold the plot
+        gifDiv.append('<img class="gifImg" src='+gif[i].images.fixed_height_still.url + ' data-still=' + gif[i].images.fixed_height_still.url + ' data-animate=' + gif[i].images.fixed_height.url + ' data-state="still"/>');
+        gifDiv.append('<h3 class="label label-default">Rated: '+gif[i].rating + '</h3>');
 
-        // Puts the entire Movie above the previous movies.
-        $('.results').prepend(gifDiv);
-
+        $('.results').append(gifDiv);
       }
-      var a = $('div.results > div');
 
-      for( var j = 0; j < a.length; j+=2 ) {
-        a.slice(j, j+2).wrapAll('<div class="row"></div>');
+      // Create rows for even height columns
+      var row = $('div.results > div');
+
+      for( var j = 0; j < row.length; j+=3 ) {
+        row.slice(j, j+3).wrapAll('<div class="row"></div>');
       }
 
     });
 
-
-    url = 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=10&q=';
+    url = 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=20&q=';
   }
 
   // Form input click
