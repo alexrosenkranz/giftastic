@@ -79,7 +79,7 @@ $(document).ready(function() {
     });
 
 
-    url = 'http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=10&q=';
+    url = 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=10&q=';
   }
 
   // Form input click
