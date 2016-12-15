@@ -40,8 +40,8 @@ $(document).ready(function() {
   function gifDisplay() {
 
     $('.results').empty();
-    url = url + $(this).data('name');
-
+    url = url + escape($(this).data('name'));
+    console.log(url);
     // Creates AJAX call for the specific movie button being clicked
     $.ajax({
       url: url,
