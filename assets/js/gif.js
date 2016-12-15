@@ -6,7 +6,7 @@ $(document).ready(function() {
     // Variable for clicked button's value to be passed through the API
 
   var buttons = ['Gob Bluth','Ron Swanson','Community','Aqua Teen Hunger Force'];
-  var url = 'http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=10&q=';
+  var url = 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=10&q=';
   var queryValue;
 
   // Create buttons from array
