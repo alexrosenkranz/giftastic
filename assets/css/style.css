@@ -2,23 +2,44 @@
 
 .left-column {
   padding: 10px 20px;
-  background: #ccc;
+  background: #AFFFE3;
+  border-bottom: 5px solid #2C4039 ;
 }
 
 .right-column {
-  background: #eee;
-
+  background: #AFFFE3;
+  border-left: 5px solid #2C4039 ;
+  border-bottom: 5px solid #2C4039 ;
 }
+
+.page-header {
+  border-bottom: 2px dashed #2C4039;
+}
+
+.page-header h1 {
+  color: #2C4039;
+}
+
 
 .buttonArea {
   margin-top: 20px;
 }
 
 
-.gifButton {
-
-  margin: 7px 0 ;
+.gifButton, .submit {
+  border: none;
+  margin: 7px 0;
+  background: #577F71;
   text-transform: capitalize;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  color: #AFFFE3;
+}
+
+.gifButton:hover, .submit:hover, .gifButton:active, .gifButton:focus, .submit:focus {
+  background: #2C4039;
+  color: #AFFFE3;
+  outline: none;
 }
 
 .gif {
@@ -29,4 +50,29 @@
   cursor: pointer;
   display: block;
   max-width: 100%;
+}
+
+.result_title {
+  margin-top: 50px;
+  color: #2C4039;
+}
+.result_title span {
+  color: #AFFFE3;
+  padding: 5px 10px;
+  background: #2C4039;
+}
+
+.label {
+  background: #2C4039;
+  color: #AFFFE3;
+  font-size: 100%;
+  line-height: 2;
+}
+
+
+#userInput {
+  border: none;
+  background-color: rgba(255,255,255,0.7);
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
