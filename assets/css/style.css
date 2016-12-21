@@ -1,15 +1,17 @@
-
+body {
+  background: #eee;
+}
 
 .left-column {
   padding: 10px 20px;
   background: #AFFFE3;
-  border-bottom: 5px solid #2C4039 ;
+  border-bottom: 5px solid #2C4039;
 }
 
 .right-column {
   background: #AFFFE3;
-  border-left: 5px solid #2C4039 ;
-  border-bottom: 5px solid #2C4039 ;
+  border-left: 5px solid #2C4039;
+  border-bottom: 5px solid #2C4039;
 }
 
 .page-header {
@@ -68,7 +70,6 @@
   font-size: 100%;
   line-height: 2;
 }
-
 
 #userInput {
   border: none;

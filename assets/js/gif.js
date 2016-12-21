@@ -5,9 +5,9 @@ $(document).ready(function() {
     // URL for API call
     // Variable for clicked button's value to be passed through the API
 
-  var topics = ['Gob Bluth','Ron Swanson','Community','Archer', 'WWE'];
+  var topics = ['Arrested Development','Parks And Recreation','Community','Archer', 'WWE', 'Rick And Morty', 'Tim And Eric', 'Luke Cage', 'LOST', 'Bojack Horseman'];
   var url = 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=20&q=';
-  var queryValue;
+  
 
   // Create topics from array
   function createTopics() {
@@ -49,7 +49,7 @@ $(document).ready(function() {
     }).done(function(response) {
       console.log(response);
       var gif = response.data;
-      for (var i = 0; i < 10; i++) {
+      for (var i = 0; i < 12; i++) {
         
         // Creates a div to hold the gif and appends it to .results class on page (in right-column)
         var gifDiv = $('<div>');
